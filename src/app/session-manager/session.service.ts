@@ -11,7 +11,8 @@ export class SessionService {
   private context: SessionContext;
 
   constructor(@Inject(configService) public config) {
-    this.context = new SessionContext(config.storage);
+    const storage = new config.storage();
+    this.context = new SessionContext(storage);
     SessionService.session = this.context.loadStorage();
   }
 

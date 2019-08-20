@@ -7,13 +7,13 @@ import { SessionManagerConfig } from './session-manager/config/session-manager-c
 import { LocalStorage } from './session-manager/storages/local-storage';
 import { SessionStorage } from './session-manager/storages/session-storage';
 
-export const customConfig: SessionManagerConfig = {
-  storage: new LocalStorage() // LocalStorage or SessionStorage
+export const sessionConfig: SessionManagerConfig = {
+  storage: SessionStorage.setup() // LocalStorage or SessionStorage
 };
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SessionManagerModule.forRoot(customConfig)],
+  imports: [BrowserModule, SessionManagerModule.forRoot(sessionConfig)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

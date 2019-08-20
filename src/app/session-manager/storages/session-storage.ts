@@ -1,6 +1,9 @@
 import { SessionStrategy } from '../strategy/session-strategy';
 
 export class SessionStorage implements SessionStrategy {
+  static setup(): any {
+    return SessionStorage;
+  }
   constructor() {
     this.init();
   }

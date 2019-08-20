@@ -1,6 +1,9 @@
 import { SessionStrategy } from '../strategy/session-strategy';
 
 export class LocalStorage implements SessionStrategy {
+  static setup(): any {
+    return LocalStorage;
+  }
   constructor() {
     this.init();
   }
